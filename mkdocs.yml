@@ -1,0 +1,13 @@
+site_name: Strapi Postgis Plugin
+repo_name: am2222/strapi-plugin-postgis
+repo_url: https://github.com/am2222/strapi-plugin-postgis
+theme:
+  name: material
+  palette:
+    primary: deep purple
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+  features:
+    - instant
+copyright: Copyright &copy; 2022 - 

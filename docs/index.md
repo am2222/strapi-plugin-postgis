@@ -1,16 +1,16 @@
 
 <div align="center">
 
-[![DocSearch](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/github-logo.png?raw=true)](https://am2222.github.io/strapi-plugin-postgis/)
 
-Add native postgis support to strapi.
+
+<img src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/github-logo.png?raw=true">
+<img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg">
+<img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg">
+
   
-[![npm version](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml)  [![Docs](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml)
-
 <p align="center">
   <strong>
-  <a href="https://am2222.github.io/strapi-plugin-postgis/">Documentation</a>
-  </strong>
+Add native postgis support to strapi.  </strong>
 </p>
 
 </div>
@@ -40,9 +40,7 @@ npm i strapi-plugin-postgis
 
 ```
 
-**Make sure to config your strapi to use `postgrs` database as backend, Use this link in case you need any help with this step (https://strapi.io/blog/postgre-sql-and-strapi-setup)**
-
-**Make sure to install postgis on your database server.** 
+Make sure to config your strapi to use `postgrs` database as backend, Use this link in case you need any help with this step (https://strapi.io/blog/postgre-sql-and-strapi-setup)
 
 Modify your middlewares as following to let strapi load `osm` tiles. Add `'*.tile.openstreetmap.org'` to the `img-src` as follows
 
@@ -76,16 +74,6 @@ module.exports = [
 
 ```
 
-Run strapi and you should see the following line
-
-```
-
-[2022-06-03 10:47:25.194] info: Welcome to Strapi Postgis 🚀 + 🐘 + 🗺️ | 3.1 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
-```
-
-
-
-
 Now in your api folder modify `content-types` and add a new column with the following format
 
 ```javascript
@@ -118,7 +106,7 @@ Now in your api folder modify `content-types` and add a new column with the foll
 
 ## Supported Data Types
 
-### POINT
+### POINT(0 0)
 
 ![Screenshot](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/points.png?raw=true)
 ```json
@@ -134,13 +122,13 @@ Now in your api folder modify `content-types` and add a new column with the foll
     }
 
 ```
-* POINT Z (0 0 0)
+POINT Z (0 0 0)
 
-* POINT ZM (0 0 0 0)
+POINT ZM (0 0 0 0)
 
-* POINT EMPTY
+POINT EMPTY
 
-### LINESTRING
+### LINESTRING(0 0,1 1,1 2)
 ![Screenshot](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/linestring.png?raw=true)
 
 ```json
@@ -158,9 +146,9 @@ Now in your api folder modify `content-types` and add a new column with the foll
 
 ```
 
-* LINESTRING EMPTY
+LINESTRING EMPTY
 
-### POLYGON
+### POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))
 
 ![Screenshot](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/polygon.png?raw=true)
 
@@ -178,19 +166,19 @@ Now in your api folder modify `content-types` and add a new column with the foll
 
 ```
 
-* MULTIPOINT((0 0),(1 2))
+MULTIPOINT((0 0),(1 2))
 
-* MULTIPOINT Z ((0 0 0),(1 2 3))
+MULTIPOINT Z ((0 0 0),(1 2 3))
 
-* MULTIPOINT EMPTY
+MULTIPOINT EMPTY
 
-* MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))
+MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))
 
-* MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)), ((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))
+MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)), ((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))
 
-* GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))
+GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))
 
-* GEOMETRYCOLLECTION EMPTY
+GEOMETRYCOLLECTION EMPTY
 
 
 ## TODO
@@ -199,7 +187,6 @@ Now in your api folder modify `content-types` and add a new column with the foll
 - Add query options like sort by distance, overlap and etc.
 - Develop dashboard
 - Add cool pg queries and tilings ;)
-
 
 ## Thanks to
 * strapi-plugin-point-list for the idea of how to add a custom components to the strapi content types

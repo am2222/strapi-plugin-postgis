@@ -1,0 +1,53 @@
+{
+  "name": "strapi-plugin-postgis",
+  "version": "0.1.3",
+  "description": "Postgis support for strapi CMS.",
+  "strapi": {
+    "displayName": "Postgis",
+    "name": "postgis",
+    "description": "Postgis support for strapi CMS",
+    "kind": "plugin"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.1.12"
+  },
+  "dependencies": {
+    "@geoman-io/leaflet-geoman-free": "^2.12.0",
+    "@mapbox/geojson-rewind": "^0.5.1",
+    "@mapbox/geojsonhint": "^3.0.1",
+    "@strapi/strapi": "^4.1.12",
+    "@turf/turf": "^6.5.0",
+    "axios": "^0.26.0",
+    "knex": "^1.0.3",
+    "knex-postgis": "^0.14.3",
+    "leaflet": "^1.8.0",
+    "reproject": "^1.2.6",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "scripts": {
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish",
+    "test": "echo \"no tests yet\"",
+    "docs:build": "mkdocs build",
+    "docs:serve": "mkdocs serve"
+  },
+  "author": {
+    "name": "Majid Hojati",
+    "email": "hoja4090@mylaureir.ca",
+    "url": "https://github.com/am2222"
+  },
+  "maintainers": [
+    {
+      "name": "Majid Hojati",
+      "email": "hoja4090@mylaureir.ca",
+      "url": "https://github.com/am2222"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/am2222/strapi-plugin-postgis"
+}
