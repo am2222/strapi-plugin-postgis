@@ -15,6 +15,8 @@ Add native postgis support to strapi.
 
 </div>
 
+![Screenshot](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/screenshot.png?raw=true)
+
 ---
 
 

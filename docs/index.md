@@ -7,10 +7,12 @@
 <img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg">
 <img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg">
 
+
   
 <p align="center">
   <strong>
 Add native postgis support to strapi.  </strong>
+<img src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/screenshot.png?raw=true">
 </p>
 
 </div>
