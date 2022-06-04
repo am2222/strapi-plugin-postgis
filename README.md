@@ -5,7 +5,7 @@
 
 Add native postgis support to strapi.
   
-[![npm version](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml)  [![Docs](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml)
+  [![npm Package](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml) [![Docs](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg)](https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml)
 
 <p align="center">
   <strong>
