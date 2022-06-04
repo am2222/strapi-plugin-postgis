@@ -10,9 +10,10 @@ Add native postgis support to strapi.
 <p align="center">
   <strong>
   <a href="https://am2222.github.io/strapi-plugin-postgis/">Documentation</a>
+   
+ <a href="https://youtu.be/THLGTUNbV1k">Video </a>
   </strong>
 </p>
-
 </div>
 
 ![Screenshot](https://github.com/am2222/strapi-plugin-postgis/raw/main/images/screenshot.png?raw=true)
