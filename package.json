@@ -14,7 +14,6 @@
   "dependencies": {
     "@geoman-io/leaflet-geoman-free": "^2.12.0",
     "@mapbox/geojson-rewind": "^0.5.1",
-    "@mapbox/geojsonhint": "^3.0.1",
     "@strapi/strapi": "^4.1.12",
     "@turf/turf": "^6.5.0",
     "axios": "^0.26.0",
