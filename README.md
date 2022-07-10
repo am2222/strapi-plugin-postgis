@@ -47,6 +47,7 @@ npm i strapi-plugin-postgis
 
 **Make sure to install postgis on your database server.** 
 * This plugin is only compatible with postgis versions 3.1 and 3.2*
+
 Modify your middlewares as following to let strapi load `osm` tiles. Add `'*.tile.openstreetmap.org'` to the `img-src` as follows
 
 
