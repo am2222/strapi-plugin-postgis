@@ -19,15 +19,15 @@ const name = pluginPkg.strapi.name;
 /*
   Since strapi doesn't support custom fields in v4, we have to overwrite the current implementation
 */
-import { intercept } from './utils/intercept';
-import * as helperPlugin from '@strapi/helper-plugin';
-intercept(helperPlugin, 'GenericInput', ({ args: [props], resolve }) => {
+//import { intercept } from './utils/intercept';
+//import * as helperPlugin from '@strapi/helper-plugin';
+/*intercept(helperPlugin, 'GenericInput', ({ args: [props], resolve }) => {
   const type = (props.attribute || {}).fieldRenderer || props.type;
   return resolve({
     ...props,
     type,
   });
-});
+});*/
 
 
 const handleTriggerDeployment = () => {
@@ -35,7 +35,28 @@ const handleTriggerDeployment = () => {
 }
 export default {
   register(app) {
-    app.addFields({ type: 'postgis', Component: Map });
+    app.customFields.register({
+      name: 'map',
+      pluginId,
+      type: 'json',
+      icon: PluginIcon,
+      intlLabel: {
+        id: 'postgis.label',
+        defaultMessage: 'postgis map',
+      },
+      intlDescription: {
+        id: 'postgis.description',
+        defaultMessage: 'postgis map description',
+      },
+      components: {
+        Input: async () => import(
+          './components/Map'
+        ),
+      },
+      options: {
+      },    
+    });
+    //app.addFields({ type: 'postgis', Component: Map });
     // app.addMenuLink({
     //   to: `/plugins/${pluginId}`,
     //   icon: PluginIcon,

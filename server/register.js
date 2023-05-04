@@ -27,6 +27,12 @@ module.exports = async ({ strapi }) => {
       strapi.log.info(`Error accessing POSTGIS`);
       return;
     }
+
+    strapi.customFields.register({
+      name: 'map',
+      plugin: 'postgis',
+      type: 'json',
+    });
   
     pg.destroy()
     strapi.postgis['enabled'] = true;

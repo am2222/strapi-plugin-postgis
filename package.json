@@ -17,6 +17,7 @@
     "@strapi/strapi": "^4.1.12",
     "@turf/turf": "^6.5.0",
     "axios": "^0.26.0",
+    "codemirror": "^5.65.13",
     "knex": "^1.0.3",
     "knex-postgis": "^0.14.3",
     "leaflet": "^1.8.0",
