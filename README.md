@@ -27,6 +27,10 @@ Add native postgis support to strapi.
 ## How does it work?
 Since Strapi does not support native database formats I convert requests before they being sent to the querybuilder and convert all the geometry objects to the `geojson`. 
 
+## Requirements
+
+Strapi Version 4.5.0 and up.
+
 ## Installation
 
 Setup your strapi app as usual
