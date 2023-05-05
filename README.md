@@ -109,8 +109,8 @@ Now in your api folder modify `content-types` and add a new column with the foll
           "geometry(POINT,4326)" //-> change this line according to the Supported Data Types section
         ]
       },
-      "type": "json", //->don't change this
-      "fieldRenderer": "postgis" //->don't change this
+      "type": "customField", //->don't change this
+      "customField": "plugin::postgis.map" //->don't change this
     }
   }
 }
@@ -133,8 +133,8 @@ Now in your api folder modify `content-types` and add a new column with the foll
           "geometry(POINT,4326)"
         ]
       },
-      "type": "json",
-      "fieldRenderer": "postgis"
+      "type": "customField",
+      "customField": "plugin::postgis.map"
     }
 
 ```
@@ -155,8 +155,8 @@ Now in your api folder modify `content-types` and add a new column with the foll
           "geometry(LINESTRING,4326)"
         ]
       },
-      "type": "json",
-      "fieldRenderer": "postgis"
+      "type": "customField",
+      "customField": "plugin::postgis.map"
     }
 
 
@@ -176,8 +176,8 @@ Now in your api folder modify `content-types` and add a new column with the foll
           "geometry(POLYGON,4326)"
         ]
       },
-      "type": "json",
-      "fieldRenderer": "postgis"
+      "type": "customField",
+      "customField": "plugin::postgis.map"
     }
 
 ```
