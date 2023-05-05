@@ -94,7 +94,7 @@ Run strapi and you should see the following line
 
 
 
-Now in your api folder modify `content-types` and add a new column with the following format
+Now in your content-types api folder modify `schema.json` and add a new column with the following format
 
 ```javascript
 {
