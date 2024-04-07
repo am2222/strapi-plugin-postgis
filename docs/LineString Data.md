@@ -13,8 +13,8 @@
           "geometry(LINESTRING,4326)"
         ]
       },
-      "type": "json",
-      "fieldRenderer": "postgis"
+           "type": "customField",
+      "customField": "plugin::postgis.map"
     }
 
 
