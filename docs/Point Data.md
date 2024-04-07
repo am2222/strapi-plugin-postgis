@@ -13,9 +13,11 @@
           "geometry(POINT,4326)"
         ]
       },
-      "type": "json",
-      "fieldRenderer": "postgis"
+          "type": "customField",
+      "customField": "plugin::postgis.map"
     }
+
+
 
 ```
 * POINT Z (0 0 0)
