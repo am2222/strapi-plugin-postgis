@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-postgis",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Postgis support for strapi CMS.",
   "strapi": {
     "displayName": "Postgis",
