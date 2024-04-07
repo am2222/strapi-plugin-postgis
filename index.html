@@ -1,0 +1,843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="Feature%20Service/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Strapi Postgis Plugin</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#under-development" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Strapi Postgis Plugin" class="md-header__button md-logo" aria-label="Strapi Postgis Plugin" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Strapi Postgis Plugin
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/am2222/strapi-plugin-postgis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    am2222/strapi-plugin-postgis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Strapi Postgis Plugin" class="md-nav__button md-logo" aria-label="Strapi Postgis Plugin" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Strapi Postgis Plugin
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/am2222/strapi-plugin-postgis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    am2222/strapi-plugin-postgis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#under-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Under Development
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does it work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point0-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      POINT(0 0)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linestring0-01-11-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      LINESTRING(0 0,1 1,1 2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polygon0-04-04-40-40-01-1-2-1-2-2-1-21-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thanks-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thanks to
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Feature%20Service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Geometry%20Collection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometry Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LineString%20Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LineString Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Point%20Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Polygon%20Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polygon Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Query%20Parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#under-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Under Development
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does it work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point0-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      POINT(0 0)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linestring0-01-11-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      LINESTRING(0 0,1 1,1 2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polygon0-04-04-40-40-01-1-2-1-2-2-1-21-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thanks-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thanks to
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Home</h1>
+
+<div align="center">
+
+
+
+<img src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/github-logo.png?raw=true">
+<img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/npm-publish.yml/badge.svg">
+<img src="https://github.com/am2222/strapi-plugin-postgis/actions/workflows/docs-publish-github.yml/badge.svg">
+
+
+
+<p align="center">
+  <strong>
+Add native postgis support to strapi.  </strong>
+<img src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/screenshot.png?raw=true">
+</p>
+
+</div>
+
+<hr />
+<h2 id="under-development">Under Development</h2>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>Since Strapi does not support native database formats I convert requests before they being sent to the querybuilder and convert all the geometry objects to the <code>geojson</code>. </p>
+<h2 id="installation">Installation</h2>
+<p>Setup your strapi app as usual</p>
+<pre><code class="language-javascript">npx create-strapi-app@latest my-project --quickstart
+</code></pre>
+<p>Install <code>pg</code> and <code>strapi-plugin-postgis</code> </p>
+<pre><code class="language-javascript">npm install pg --save
+npm i strapi-plugin-postgis
+
+</code></pre>
+<p>Make sure to config your strapi to use <code>postgrs</code> database as backend, Use this link in case you need any help with this step (https://strapi.io/blog/postgre-sql-and-strapi-setup)</p>
+<p>Modify your middlewares as following to let strapi load <code>osm</code> tiles. Add <code>'*.tile.openstreetmap.org'</code> to the <code>img-src</code> as follows</p>
+<pre><code class="language-javascript">// ./config/middlewares.js
+module.exports = [
+  'strapi::errors',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'img-src': [&quot;'self'&quot;, 'data:', 'blob:', '*.tile.openstreetmap.org'],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
+  'strapi::cors',
+  'strapi::poweredBy',
+  'strapi::logger',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
+];
+
+
+</code></pre>
+<p>Now in your api folder modify <code>content-types</code> and add a new column with the following format</p>
+<pre><code class="language-javascript">{
+  &quot;kind&quot;: &quot;collectionType&quot;,
+  .
+  .
+  .
+  &quot;attributes&quot;: {
+  .
+  .
+  .
+    &quot;geom&quot;: { //--&gt; your column name. you can change to anything
+      &quot;columnType&quot;: {
+        &quot;type&quot;: &quot;specificType&quot;,
+        &quot;args&quot;: [
+          &quot;geometry(POINT,4326)&quot; //-&gt; change this line according to the Supported Data Types section
+        ]
+      },
+      &quot;type&quot;: &quot;json&quot;, //-&gt;don't change this
+      &quot;fieldRenderer&quot;: &quot;postgis&quot; //-&gt;don't change this
+    }
+  }
+}
+
+</code></pre>
+<h2 id="supported-data-types">Supported Data Types</h2>
+<h3 id="point0-0">POINT(0 0)</h3>
+<p><img alt="Screenshot" src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/points.png?raw=true" /></p>
+<pre><code class="language-json">&quot;geom&quot;: {
+      &quot;columnType&quot;: {
+        &quot;type&quot;: &quot;specificType&quot;,
+        &quot;args&quot;: [
+          &quot;geometry(POINT,4326)&quot;
+        ]
+      },
+      &quot;type&quot;: &quot;json&quot;,
+      &quot;fieldRenderer&quot;: &quot;postgis&quot;
+    }
+
+</code></pre>
+<p>POINT Z (0 0 0)</p>
+<p>POINT ZM (0 0 0 0)</p>
+<p>POINT EMPTY</p>
+<h3 id="linestring0-01-11-2">LINESTRING(0 0,1 1,1 2)</h3>
+<p><img alt="Screenshot" src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/linestring.png?raw=true" /></p>
+<pre><code class="language-json">    &quot;g_line&quot;: {
+      &quot;columnType&quot;: {
+        &quot;type&quot;: &quot;specificType&quot;,
+        &quot;args&quot;: [
+          &quot;geometry(LINESTRING,4326)&quot;
+        ]
+      },
+      &quot;type&quot;: &quot;json&quot;,
+      &quot;fieldRenderer&quot;: &quot;postgis&quot;
+    }
+
+
+</code></pre>
+<p>LINESTRING EMPTY</p>
+<h3 id="polygon0-04-04-40-40-01-1-2-1-2-2-1-21-1">POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))</h3>
+<p><img alt="Screenshot" src="https://github.com/am2222/strapi-plugin-postgis/raw/main/images/polygon.png?raw=true" /></p>
+<pre><code class="language-json">    &quot;g_polygon&quot;: {
+      &quot;columnType&quot;: {
+        &quot;type&quot;: &quot;specificType&quot;,
+        &quot;args&quot;: [
+          &quot;geometry(POLYGON,4326)&quot;
+        ]
+      },
+      &quot;type&quot;: &quot;json&quot;,
+      &quot;fieldRenderer&quot;: &quot;postgis&quot;
+    }
+
+</code></pre>
+<p>MULTIPOINT((0 0),(1 2))</p>
+<p>MULTIPOINT Z ((0 0 0),(1 2 3))</p>
+<p>MULTIPOINT EMPTY</p>
+<p>MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))</p>
+<p>MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)), ((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))</p>
+<p>GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))</p>
+<p>GEOMETRYCOLLECTION EMPTY</p>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>Add tests</li>
+<li>Support all the types</li>
+<li>Add query options like sort by distance, overlap and etc.</li>
+<li>Develop dashboard</li>
+<li>Add cool pg queries and tilings ;)</li>
+</ul>
+<h2 id="thanks-to">Thanks to</h2>
+<ul>
+<li>strapi-plugin-point-list for the idea of how to add a custom components to the strapi content types</li>
+<li>postgis knex plugin</li>
+<li>leaflet editor plugin</li>
+<li>strapi team</li>
+<li>and so many other stuff </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 -
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["instant"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
